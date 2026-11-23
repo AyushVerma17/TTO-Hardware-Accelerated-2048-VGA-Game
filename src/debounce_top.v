@@ -96,23 +96,14 @@ endmodule
 
 module priority_encoder(
     // s_rst > right > left > down > up
-    input wire [7:0]i,
+    input wire [4:0]i,
     output reg [2:0]y
 );
 
     always @(*) begin
         // s_rst for i[7]
-        if (i[7]) begin
+        if (i[4]) begin
             y = 3'd0;
-        end
-        else if (i[6]) begin
-            y = 3'd1;
-        end
-        else if (i[5]) begin
-            y = 3'd2;
-        end
-        else if (i[4]) begin
-            y = 3'd3;
         end
         // right
         else if (i[3]) begin
@@ -200,7 +191,7 @@ module debounce_top(
     );
     
     priority_encoder pr_enc(
-        .i({sync_out[4],3'd0,sync_out[3:0]}),
+        .i(sync_out),
         .y(pr_enc_out)
     );
     
@@ -223,8 +214,6 @@ module debounce_top(
 
     // Demux
     always @(*) begin
-        s_rst = 1'b0;
-        y = 4'd0;
         if(debounced_out) begin
             case(sel_lines)
                 3'd0: s_rst = 1'b1;
