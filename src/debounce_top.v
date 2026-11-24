@@ -48,7 +48,7 @@ module debouncer (
                 // If select line changes in between then there are two possible cases:
                 // 1. Different button was pressed
                 // 2. Pressed button was released
-                if(sel_lines != en_sel) begin 
+                if(sel_lines != enc_sel) begin 
                     ns = S0;
                     count_next = 1'b0;
                 end
@@ -90,6 +90,11 @@ module debouncer (
                     ns = S2;
                     count_next = 1'b0;
                 end
+            end
+            default: begin
+                ns = S0;
+                count_next = 1'b0;
+                y = 1'b0;
             end
         endcase
     end
