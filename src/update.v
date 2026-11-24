@@ -28,11 +28,10 @@ localparam [2:0] LATCH_ST = 0,//default state
 localparam [1:0] F1_ROW= 2'b11;//will be 30 so F2 is inverted of it 
 localparam [1:0] F1_COL= 2'b00;//will be 30 so F2 is inverted of it 
 
-localparam [3:0] ENDMOVE = 4'd11;//2048
+localparam [1:0] F2_COL= 2'b11;//will be 30 so F2 is inverted of it 
+localparam [1:0] F2_ROW= 2'b00;//will be 30 so F2 is inverted of it 
 
-wire [1:0] F2_ROW,F2_COL;
-assign F2_ROW=F1_COL;
-assign F2_COL=F1_ROW;
+localparam [3:0] ENDMOVE = 4'd11;//2048
 
 //frist version ==> not going with por start random logic
 // Ports to Adder/Comparator

@@ -11,10 +11,10 @@ To use:
 
 module hvsync_generator(clk, reset, hsync, vsync, display_on, hpos, vpos);
 
-  input clk;
-  input reset;
+  input wire clk;
+  input wire reset;
   output reg hsync, vsync;
-  output display_on;
+  output wire display_on;
   output reg [9:0] hpos;
   output reg [9:0] vpos;
 
@@ -54,11 +54,12 @@ module hvsync_generator(clk, reset, hsync, vsync, display_on, hpos, vpos);
   always @(posedge clk)
   begin
     vsync <= ~(vpos>=V_SYNC_START && vpos<=V_SYNC_END);
-    if(hmaxxed)
+    if(hmaxxed) begin
       if (vmaxxed)
         vpos <= 0;
       else
         vpos <= vpos + 1;
+    end
   end
   
   // display_on is set when beam is in "safe" visible frame
