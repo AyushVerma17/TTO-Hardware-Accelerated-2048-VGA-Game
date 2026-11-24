@@ -3,6 +3,12 @@
 
 A hardware implementation of the classic **2048 puzzle game**, with game logic implemented in RTL and real-time video output through a VGA display.
 
+<p align="center">
+  <img src="docs/images/output.gif" alt="Gameplay" width="400">
+  <br>
+  <em>Gameplay</em>
+</p>
+
 ## Overview
 
 2048 is a tile-merging puzzle played on a 4×4 grid. Each tile represents a power of two. The player moves the tiles up, down, left, or right; tiles with matching values merge into a tile with twice the value. A new tile appears after a successful move. The objective is to create a tile with the value **2048** without running out of valid moves.
