@@ -58,6 +58,12 @@ Tiles are stored internally using a 4-bit exponent representation rather than th
   <em>Game win</em>
 </p>
 
+<p align="center">
+  <img src="docs/images/output.gif" alt="Game Play via VGA" width="700">
+  <br>
+  <em>Game Play via VGA</em>
+</p>
+
 ## Architecture
 
 The five game inputs (up, down, left, right, and soft reset) pass through the debouncer (priority given in this order: soft reset, up, down, left , right). No new inputs will be accepted untill all buttons are deasserted. The game logic (`update.v` and `randomizer.v`) processes player input and updates the grid and win/loss status. The VGA logic (`vga_controller.v` and `hvsync_generator.v`) uses the grid and status signals to generate the displayed pixels and VGA synchronization signals.

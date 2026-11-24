@@ -254,13 +254,6 @@ always@(*) begin//updater logic
                 A_comp2=grid_trav;
                 B_comp2=grid_now;
                 case({comp1_out,comp2_out})
-                2'b11:begin//same value and its zero so fill out that zero
-                        stater=FINDZ;
-                        trav_colsr=trav_cols;
-                        trav_rowsr=trav_rows;
-                        now_colsr=now_cols;
-                        now_rowr=now_rows;
-                end
                 2'b10:begin//its zero at trav not at now
                         stater=UPDATETRAV;
                         trav_colsr=trav_cols;
@@ -293,7 +286,7 @@ always@(*) begin//updater logic
                         now_rowr=colorrow?res[1:0]:now_rows;
                 end
                 default:begin//glitch
-                        stater=FINDCOMPANION;
+                        stater=FINDZ;
                         trav_colsr=trav_cols;
                         trav_rowsr=trav_rows;
                         now_colsr=now_cols;
