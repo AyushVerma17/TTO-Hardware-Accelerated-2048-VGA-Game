@@ -295,7 +295,7 @@ module vga_controller(
 		4'h9: bg_colour = 6'b11_01_10; // 512
 		4'hA: bg_colour = 6'b10_01_11; // 1024
 		4'hB: bg_colour = 6'b11_00_01; // 2048
-		default: bg_colour = center ? 6'b11_11_11 : 6'b01_01_01;
+		default: bg_colour = 6'b01_01_01;
 		endcase
 	end
 
