@@ -131,7 +131,7 @@ begin
                 cleared_bit<=1'b1;
                 srst_latched<=1'b0;//on next cycle it will insert a random
         end
-        else if(cleared_bit && ~srst_latched)begin
+        else if(~srst_latched)begin//after clearing state insert a rand value
                 grid[rand_pos[3:2]][rand_pos[1:0]]<={2'b0,shiftedtwo};//has to be changed all random insertion has to be chagned
                 srst_latched<=1'b1;
         end
