@@ -13,7 +13,7 @@ module debouncer (
     reg [1:0] ps, ns;
     reg vsync_reg;
     reg count, count_next;
-    wire tick = vsync_reg & ~vsync;
+    wire tick = vsync_reg & ~vsync; // Detecting falling edge of vsync
     localparam S0 = 2'd0, S1 = 2'd1, S2 = 2'd2, S3 = 2'd3;
     
     always @(posedge clk or negedge rst_n) begin
@@ -45,26 +45,23 @@ module debouncer (
             end
             
             S1: begin
-                if (sel_lines != enc_sel) begin //selection line change
+                // If select line changes in between then there are two possible cases:
+                // 1. Different button was pressed
+                // 2. Pressed button was released
+                if(sel_lines != en_sel) begin 
                     ns = S0;
                     count_next = 1'b0;
-            end
-            else begin
-                    if(btn == 1) begin
-                        if(tick) begin
-                            if(count) begin //2nd tick
-                                ns = S2;
-                                count_next = 1'b0;
-                            end
-                            else begin //1st tick
-                                ns = S1;
-                                count_next = 1'b1;
-                            end
+                end
+                else begin
+                    if(tick) begin
+                        if(count) begin // 2nd tick (2nd vsync falling edge)
+                            ns = S2;
+                            count_next = 1'b0;
                         end
-                    end
-                    else begin //button became zero in middle
-                        ns = S0;
-                        count_next = 1'b0;
+                        else begin // 1st tick (1st vsync falling edge)
+                            ns = S1;
+                            count_next = 1'b1;
+                        end
                     end
                 end
             end
