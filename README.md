@@ -5,8 +5,8 @@ A hardware implementation of the classic **2048 puzzle game**, with game logic i
 
 <table align="center">
   <tr>
-    <td align="center"><img src="docs/images/game_lose.gif" alt="Game Lose" width="400"></td>
-    <td align="center"><img src="docs/images/game_win.gif" alt="Game Win" width="400"></td>
+    <td align="center"><img src="docs/images/game_lose.gif" alt="Game Lose" width="375"></td>
+    <td align="center"><img src="docs/images/game_win.gif" alt="Game Win" width="375"></td>
   </tr>
   <tr>
     <td align="center"><strong>Game Lose</strong></td>
