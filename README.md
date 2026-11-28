@@ -1,13 +1,11 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 # TTO-Hardware-Accelerated-2048-VGA-Game
 
-A hardware implementation of the classic **2048 puzzle game**, with game logic implemented in RTL and real-time video output through a VGA display.
+A hardware implementation of the classic **2048 puzzle game**, with game logic implemented in RTL and real-time video output through a VGA display. See the gameplay videos (sped-up to shorten video duration) below:
 
-<p align="center">
-  <img src="docs/images/output.gif" alt="Gameplay" width="400">
-  <br>
-  <em>Gameplay</em>
-</p>
+| Losing Gameplay | Winning Gameplay |
+| :---: | :---: |
+| [![Losing Gameplay](docs/images/game_lose.gif)](https://github.com/user-attachments/assets/4e85f2d6-8a9b-47b0-9118-2fa4e96da53f) | [![Winning Gameplay](docs/images/game_win.gif)](https://github.com/user-attachments/assets/2f29a7e0-0f95-4d91-ba86-54f3f055408a) |
 
 ## Overview
 
@@ -32,7 +30,7 @@ Tiles are stored internally using a 4-bit exponent representation rather than th
 - **Hard reset and soft restart** support.
 - **VGA output** at 640×480, approximately 60 FPS, with a 25.175 MHz pixel clock and 2 bits per RGB colour channel.
 
-## Demo
+## Snapshots
 
 <p align="center">
   <img src="docs/images/TTO_2048_Sequence.png" alt="Sequence" width="700">
