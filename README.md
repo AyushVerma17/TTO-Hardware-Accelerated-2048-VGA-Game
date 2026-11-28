@@ -5,7 +5,7 @@ A hardware implementation of the classic **2048 puzzle game**, with game logic i
 
 | Losing Gameplay | Winning Gameplay |
 | :---: | :---: |
-| https://github.com/user-attachments/assets/589b0357-0d69-4fb1-b32f-0fdfd8997643 | https://github.com/user-attachments/assets/2f29a7e0-0f95-4d91-ba86-54f3f055408a |
+| [![Losing Gameplay](docs/images/game_lose.gif)](https://github.com/user-attachments/assets/b9ee8dbe-90a0-4e0d-b763-cb0d461cbfe6) | [![Winning Gameplay](docs/images/game_win.gif)](https://github.com/user-attachments/assets/2f29a7e0-0f95-4d91-ba86-54f3f055408a) |
 
 ## Overview
 
